@@ -2,8 +2,9 @@ TypeScriptFormation
 ===================
 
 Amazon AWSのCloudFormationで利用するスタックのJSONを、TypeScriptを使って構築することができます。  
-TypeScriptを用いることで、プログラムとしてJSONを構築することができます。このことは、再利用性の向上させ、見通しの良いソースでスタックを構築することを可能にしています。
-さらに、CloudFormationの構成要素をTypeScriptの型として用意していますので、構成の間違いやtypoを防止することが可能です。
+TypeScriptを用いることで、プログラムとしてJSONを構築することが大きな特徴となります。
+このことは、再利用性の向上させ、見通しの良いソースでスタックを構築することを可能にしています。  
+さらに、CloudFormationの構成要素をTypeScriptの型として用意していますので、構成の間違いやtypoを防止することができます。  
 
 動作に要求される環境
 --------------------
@@ -22,10 +23,10 @@ http://nodejs.org/
 関連情報
 --------
 ### CloudFormation
-http://aws.amazon.com/jp/cloudformation/
+http://aws.amazon.com/jp/cloudformation/  
 ### TypeScript
-http://www.typescriptlang.org/
-http://typescript.codeplex.com/
+http://www.typescriptlang.org/  
+http://typescript.codeplex.com/  
 
 ライセンス
 ----------
