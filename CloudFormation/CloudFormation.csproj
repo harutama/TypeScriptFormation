@@ -22,7 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <TypeScriptCompile Include="lib\BaseClasses.ts" />
-    <Content Include="target.ts" />
+    <Content Include="README.txt" />
+    <TypeScriptCompile Include="target.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="lib\node.d.ts" />

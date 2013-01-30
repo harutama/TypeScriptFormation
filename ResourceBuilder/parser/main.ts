@@ -138,7 +138,7 @@ function procPropertiesType(key: string, props: Object) {
         if (isarray) {
             argtype = props[key]["array-type"];
         }
-        console.log("$$$" + argtype);
+
         if (argtype === "String") {
             argtype = "string";
         } else if (argtype === "Number") {
@@ -154,7 +154,7 @@ function procPropertiesType(key: string, props: Object) {
         } else if (argtype === "Object") {
             //argtype = "Object";
         } else {
-            console.log("######" + argtype);
+            //console.log("######" + argtype);
         }
 
         if (isarray) {

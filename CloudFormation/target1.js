@@ -86,5 +86,4 @@ var out = new AWS.Output("SharePointFoundationURL", new AWS.Function.Join("").ad
 out.setDescription("SharePoint Team Site URL. Please retrieve Administrator password of the instance and use it to access the URL");
 stack.addOutput(out);
 console.log(stack.toString());
-var popo = new AWS.EC2.SubnetNetworkAclAssociation("nini");
 //@ sourceMappingURL=target1.js.map

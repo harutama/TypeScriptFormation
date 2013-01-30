@@ -112,7 +112,6 @@ function procPropertiesType(key, props) {
         if(isarray) {
             argtype = props[key]["array-type"];
         }
-        console.log("$$$" + argtype);
         if(argtype === "String") {
             argtype = "string";
         } else if(argtype === "Number") {
@@ -127,7 +126,6 @@ function procPropertiesType(key, props) {
             argtype = "AWS.Function.Ref";
         } else if(argtype === "Object") {
         } else {
-            console.log("######" + argtype);
         }
         if(isarray) {
             argtype += "[]";

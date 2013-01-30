@@ -5,8 +5,6 @@
 
 var stack: AWS.Stack = new AWS.Stack("https://s3.amazonaws.com/cloudformation-templates-us-east-1/Windows_Single_Server_SharePoint_Foundation.template");
 
-
-
 var keypair: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
 keypair.setDescription("Name of an existing Amazon EC2 key pair for RDP access");
 
@@ -15,8 +13,6 @@ instancetype.setDescription("Amazon EC2 instance type").setDefault("m1.large");
 instancetype.setAllowedValues("m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.medium", "c1.xlarge");
 
 stack.addParameter(keypair, instancetype);
-
-
 
 var type2arch: AWS.Mapping = new AWS.Mapping("AWSInstanceType2Arch");
 type2arch.addEntry("m1.small", "Arch", "64");
@@ -63,8 +59,7 @@ var spWaitHandle: AWS.CloudFormation.WaitConditionHandle = new AWS.CloudFormatio
 stack.addResource(spWaitHandle);
 
 var spFoundation: AWS.EC2.Instance = new AWS.EC2.Instance("SharePointFoundation");
-//あとでやる
-spFoundation.setMetaData(null);
+spFoundation.setMetaData(null);//あとでやる
 spFoundation.setInstanceType(instancetype.createRef());
 {
     var findArch: AWS.Function.FindInMap = new AWS.Function.FindInMap(type2arch, new AWS.Function.Ref(instancetype), "Arch");
@@ -105,6 +100,3 @@ stack.addOutput(out);
 
 console.log(stack.toString());
 
-
-
-var popo: AWS.EC2.SubnetNetworkAclAssociation = new AWS.EC2.SubnetNetworkAclAssociation("nini");

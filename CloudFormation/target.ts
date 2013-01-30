@@ -29,4 +29,5 @@ var refInstance: AWS.Function.Ref;
     stack.addOutput(out);
 }
 
+//VisualStudioの「出力」にJSONが出力されます。
 console.log(stack.toString());
