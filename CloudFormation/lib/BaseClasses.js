@@ -210,8 +210,8 @@ var AWS;
                     break;
             }
         };
-        BaseResource.prototype.setMetaData = function (metaData) {
-            this.MetaData = metaData;
+        BaseResource.prototype.setMetaData = function (metadata) {
+            this.Metadata = metadata;
         };
         BaseResource.prototype.toString = function () {
             return JSON.stringify(this);
