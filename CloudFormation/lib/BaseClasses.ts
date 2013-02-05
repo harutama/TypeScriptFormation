@@ -396,7 +396,7 @@
          * The Metadata attribute enables you to associate structured data with a resource.
          * @param metadata Metadata.
          */
-        setMetaData(metadata: Object) {
+        setMetadata(metadata: Object) {
             //よくわかんないから後で
             this.Metadata = metadata;
         }

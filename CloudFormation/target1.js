@@ -53,7 +53,7 @@ winstack.addResource(spSecurityGroup);
 var spWaitHandle = new AWS.CloudFormation.WaitConditionHandle("SharePointFoundationWaitHandle");
 winstack.addResource(spWaitHandle);
 var spFoundation = new AWS.EC2.Instance("SharePointFoundation");
-spFoundation.setMetaData(null);
+spFoundation.setMetadata(null);
 spFoundation.setInstanceType(instancetype.createRef());
  {
     var findArch = new AWS.Function.FindInMap(type2arch, new AWS.Function.Ref(instancetype), "Arch");
