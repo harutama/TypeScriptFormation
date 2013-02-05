@@ -1,10 +1,10 @@
-var stack = new AWS.Stack("https://s3.amazonaws.com/cloudformation-templates-us-east-1/Windows_Single_Server_SharePoint_Foundation.template");
+var winstack = new AWS.Stack("https://s3.amazonaws.com/cloudformation-templates-us-east-1/Windows_Single_Server_SharePoint_Foundation.template");
 var keypair = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
 keypair.setDescription("Name of an existing Amazon EC2 key pair for RDP access");
 var instancetype = new AWS.Parameter("InstanceType", AWS.ParameterTypes.String);
 instancetype.setDescription("Amazon EC2 instance type").setDefault("m1.large");
 instancetype.setAllowedValues("m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.medium", "c1.xlarge");
-stack.addParameter(keypair, instancetype);
+winstack.addParameter(keypair, instancetype);
 var type2arch = new AWS.Mapping("AWSInstanceType2Arch");
 type2arch.addEntry("m1.small", "Arch", "64");
 type2arch.addEntry("m1.medium", "Arch", "64");
@@ -24,13 +24,13 @@ arch2ami.addEntry("ap-southeast-1", "64", "ami-b8f8bbea");
 arch2ami.addEntry("ap-southeast-2", "64", "ami-a740d79d");
 arch2ami.addEntry("ap-northeast-1", "64", "ami-2210a823");
 arch2ami.addEntry("sa-east-1", "64", "ami-9fc41c82");
-stack.addMapping(type2arch, arch2ami);
+winstack.addMapping(type2arch, arch2ami);
 var iamUser = new AWS.IAM.User("IAMUser");
 iamUser.setPath("/");
-stack.addResource(iamUser);
+winstack.addResource(iamUser);
 var iamUserKey = new AWS.IAM.AccessKey("IAMUserAccessKey");
 iamUserKey.setUserName(iamUser.createRef());
-stack.addResource(iamUserKey);
+winstack.addResource(iamUserKey);
 var spSecurityGroup = new AWS.EC2.SecurityGroup("SharePointFoundationSecurityGroup");
 spSecurityGroup.setGroupDescription("Enable HTTP and RDP");
 var http = {
@@ -49,9 +49,9 @@ spSecurityGroup.setSecurityGroupIngress([
     http, 
     rdp
 ]);
-stack.addResource(spSecurityGroup);
+winstack.addResource(spSecurityGroup);
 var spWaitHandle = new AWS.CloudFormation.WaitConditionHandle("SharePointFoundationWaitHandle");
-stack.addResource(spWaitHandle);
+winstack.addResource(spWaitHandle);
 var spFoundation = new AWS.EC2.Instance("SharePointFoundation");
 spFoundation.setMetaData(null);
 spFoundation.setInstanceType(instancetype.createRef());
@@ -74,16 +74,16 @@ spFoundation.setKeyName(keypair.createRef());
     cmd.add("</script>");
     spFoundation.setUserData(cmd);
 }
-stack.addResource(spFoundation);
+winstack.addResource(spFoundation);
 var spEip = new AWS.EC2.EIP("SharePointFoundationEIP");
 spEip.setInstanceId(spFoundation.createRef());
-stack.addResource(spEip);
+winstack.addResource(spEip);
 var spWaitCondition = new AWS.CloudFormation.WaitCondition("SharePointFoundationWaitCondition");
 spWaitCondition.setDependsOn(spFoundation);
 spWaitCondition.setHandle(spWaitHandle.createRef()).setTimeout("3600");
-stack.addResource(spWaitCondition);
-var out = new AWS.Output("SharePointFoundationURL", new AWS.Function.Join("").add("http://").add(spEip.createRef()));
-out.setDescription("SharePoint Team Site URL. Please retrieve Administrator password of the instance and use it to access the URL");
-stack.addOutput(out);
-console.log(stack.toString());
+winstack.addResource(spWaitCondition);
+var output = new AWS.Output("SharePointFoundationURL", new AWS.Function.Join("").add("http://").add(spEip.createRef()));
+output.setDescription("SharePoint Team Site URL. Please retrieve Administrator password of the instance and use it to access the URL");
+winstack.addOutput(output);
+console.log(winstack.toString());
 //@ sourceMappingURL=target1.js.map

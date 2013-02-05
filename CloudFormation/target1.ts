@@ -3,7 +3,7 @@
 
 //http://aws.amazon.com/jp/cloudformation/
 
-var stack: AWS.Stack = new AWS.Stack("https://s3.amazonaws.com/cloudformation-templates-us-east-1/Windows_Single_Server_SharePoint_Foundation.template");
+var winstack: AWS.Stack = new AWS.Stack("https://s3.amazonaws.com/cloudformation-templates-us-east-1/Windows_Single_Server_SharePoint_Foundation.template");
 
 var keypair: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
 keypair.setDescription("Name of an existing Amazon EC2 key pair for RDP access");
@@ -12,7 +12,7 @@ var instancetype: AWS.Parameter = new AWS.Parameter("InstanceType", AWS.Paramete
 instancetype.setDescription("Amazon EC2 instance type").setDefault("m1.large");
 instancetype.setAllowedValues("m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.medium", "c1.xlarge");
 
-stack.addParameter(keypair, instancetype);
+winstack.addParameter(keypair, instancetype);
 
 var type2arch: AWS.Mapping = new AWS.Mapping("AWSInstanceType2Arch");
 type2arch.addEntry("m1.small", "Arch", "64");
@@ -35,28 +35,28 @@ arch2ami.addEntry("ap-southeast-2", "64", "ami-a740d79d");
 arch2ami.addEntry("ap-northeast-1", "64", "ami-2210a823");
 arch2ami.addEntry("sa-east-1", "64", "ami-9fc41c82");
 
-stack.addMapping(type2arch, arch2ami);
+winstack.addMapping(type2arch, arch2ami);
 
 
 
 //http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-product-property-reference.html
 var iamUser: AWS.IAM.User = new AWS.IAM.User("IAMUser");
 iamUser.setPath("/");
-stack.addResource(iamUser);
+winstack.addResource(iamUser);
 
 var iamUserKey: AWS.IAM.AccessKey = new AWS.IAM.AccessKey("IAMUserAccessKey");
 iamUserKey.setUserName(iamUser.createRef());
-stack.addResource(iamUserKey);
+winstack.addResource(iamUserKey);
 
 var spSecurityGroup: AWS.EC2.SecurityGroup = new AWS.EC2.SecurityGroup("SharePointFoundationSecurityGroup");
 spSecurityGroup.setGroupDescription("Enable HTTP and RDP");
 var http: Object = { "IpProtocol": "tcp", "FromPort": "80", "ToPort": "80", "CidrIp": "0.0.0.0/0" };
 var rdp: Object = { "IpProtocol": "tcp", "FromPort": "3389", "ToPort": "3389", "CidrIp": "0.0.0.0/0" };
 spSecurityGroup.setSecurityGroupIngress([http, rdp]);
-stack.addResource(spSecurityGroup);
+winstack.addResource(spSecurityGroup);
 
 var spWaitHandle: AWS.CloudFormation.WaitConditionHandle = new AWS.CloudFormation.WaitConditionHandle("SharePointFoundationWaitHandle");
-stack.addResource(spWaitHandle);
+winstack.addResource(spWaitHandle);
 
 var spFoundation: AWS.EC2.Instance = new AWS.EC2.Instance("SharePointFoundation");
 spFoundation.setMetaData(null);//あとでやる
@@ -80,23 +80,23 @@ spFoundation.setKeyName(keypair.createRef());
     cmd.add("</script>")
     spFoundation.setUserData(cmd);
 }
-stack.addResource(spFoundation);
+winstack.addResource(spFoundation);
 
 var spEip: AWS.EC2.EIP = new AWS.EC2.EIP("SharePointFoundationEIP");
 spEip.setInstanceId(spFoundation.createRef());
-stack.addResource(spEip);
+winstack.addResource(spEip);
 
 var spWaitCondition: AWS.CloudFormation.WaitCondition = new AWS.CloudFormation.WaitCondition("SharePointFoundationWaitCondition");
 spWaitCondition.setDependsOn(spFoundation);
 spWaitCondition.setHandle(spWaitHandle.createRef()).setTimeout("3600");
-stack.addResource(spWaitCondition);
+winstack.addResource(spWaitCondition);
 
 
 
-var out: AWS.Output = new AWS.Output("SharePointFoundationURL", new AWS.Function.Join("").add("http://").add(spEip.createRef()));
-out.setDescription("SharePoint Team Site URL. Please retrieve Administrator password of the instance and use it to access the URL");
-stack.addOutput(out);
+var output: AWS.Output = new AWS.Output("SharePointFoundationURL", new AWS.Function.Join("").add("http://").add(spEip.createRef()));
+output.setDescription("SharePoint Team Site URL. Please retrieve Administrator password of the instance and use it to access the URL");
+winstack.addOutput(output);
 
 
-console.log(stack.toString());
+console.log(winstack.toString());
 
