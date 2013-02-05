@@ -491,7 +491,7 @@ module AWS.Function {
             this.ValueToEncode = value;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             retval[this.getFunctionName()] = this.ValueToEncode;
             return retval;
@@ -523,7 +523,7 @@ module AWS.Function {
             this.Value = value;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             retval[this.getFunctionName()] = [this.Map.getName(), this.Key, this.Value];
             return retval;
@@ -549,7 +549,7 @@ module AWS.Function {
             this.AttributeName = attributeName;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             retval[this.getFunctionName()] = [this.LogicalNameOfResource, this.AttributeName];
             return retval;
@@ -574,7 +574,7 @@ module AWS.Function {
             this.Region = region;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             retval[this.getFunctionName()] = this.Region;
             return retval;
@@ -613,7 +613,7 @@ module AWS.Function {
             return this;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             var value: any[] = [this.Delimiter, this.Values];
             retval[this.getFunctionName()] = value;
@@ -642,7 +642,7 @@ module AWS.Function {
             this.Values = values;
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             var value: any[] = [this.Index, this.Values];
             retval[this.getFunctionName()] = value;
@@ -684,7 +684,7 @@ module AWS.Function {
             }
         }
 
-        toJSON(): any {
+        private toJSON(): any {
             var retval: Object = {};
             retval[this.getFunctionName()] = this.Reference;
             return retval;
