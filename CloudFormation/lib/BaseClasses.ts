@@ -90,7 +90,7 @@
          * @return JSON stirng.
          */
         toString(): string {
-            return JSON.stringify(this);
+            return JSON.stringify(this, undefined, "    ");
         }
 
     }

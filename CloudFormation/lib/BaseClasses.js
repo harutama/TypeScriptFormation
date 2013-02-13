@@ -64,7 +64,7 @@ var AWS;
             }
         };
         Stack.prototype.toString = function () {
-            return JSON.stringify(this);
+            return JSON.stringify(this, undefined, "    ");
         };
         return Stack;
     })();
