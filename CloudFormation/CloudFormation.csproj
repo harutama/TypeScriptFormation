@@ -21,13 +21,14 @@
     <UpgradeBackupLocation />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="target.ts" />
     <TypeScriptCompile Include="lib\BaseClasses.ts" />
     <Content Include="README.txt" />
-    <TypeScriptCompile Include="target.ts" />
+    <TypeScriptCompile Include="sample_simple.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="lib\node.d.ts" />
-    <TypeScriptCompile Include="target1.ts" />
+    <TypeScriptCompile Include="sample_windows.ts" />
     <TypeScriptCompile Include="lib\Resources.ts" />
   </ItemGroup>
   <PropertyGroup>
@@ -62,7 +63,8 @@
     <TypeScriptSourceMap> --sourcemap</TypeScriptSourceMap>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>"$(ProgramFiles)\Microsoft SDKs\TypeScript\tsc.exe" --out "$(TargetDir)target.js" "$(ProjectDir)target.ts"
+    <PostBuildEvent>set TargetDir=$(TargetDir)
+"$(ProgramFiles)\Microsoft SDKs\TypeScript\tsc.exe" --out "$(TargetDir)target.js" "$(ProjectDir)target.ts"
 node "$(TargetDir)target.js"</PostBuildEvent>
   </PropertyGroup>
   <Target Name="BeforeBuild">
