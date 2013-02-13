@@ -36,20 +36,16 @@ TypeScriptFormationは、AWSの提供するサービスCloudFormationで、ス�
 
 はじめに
 ------
-TypeScriptFormationはVisual Studio 2012のソリューションとして提供されますので、Visual Studio 2012が事前にセットアップされている必要があります。
-
-(無償版を利用する場合はVisual Studio Express 2012 for Web)
-
+TypeScriptFormationはVisual Studio 2012のソリューションとして提供されますので、Visual Studio 2012が事前にセットアップされている必要があります。  
+(無償版を利用する場合はVisual Studio Express 2012 for Web)  
 [http://www.microsoft.com/visualstudio/jpn/downloads#d-2012-express](http://www.microsoft.com/visualstudio/jpn/downloads#d-2012-express)
 
-TypeScriptのインテリセンスを利用するため、TypeScript for Visual Studio 2012が必要です。
-
+TypeScriptのインテリセンスを利用するため、TypeScript for Visual Studio 2012が必要です。  
 [http://go.microsoft.com/fwlink/?LinkID=266563](http://go.microsoft.com/fwlink/?LinkID=266563)
 
-TypeScriptをコンパイルして生成されたJavaScriptは、node.jsを用いて実行されます。
-このため、node.jsのインストールが必要です。
-
-http://nodejs.org/
+TypeScriptをコンパイルして生成されたJavaScriptは、node.jsを用いて実行されます。  
+このため、node.jsのインストールが必要です。  
+[http://nodejs.org/](http://nodejs.org/)
 
 これからの内容を記述する対象となるファイルはCloudFormationプロジェクト内にあるtarget.tsファイルになります。
 
@@ -152,8 +148,8 @@ stack.addOutput(output);
 コンストラクタ1つ目の引数は、スタック全体で一意になる名前を指定します。
 2つ目の引数は、ユーザーに出力する値を指定します。instance.createRefメソッドを用いて、EC2インスタンスのIDをフィードバックするように設定しています。
 
-Outputの追加
------------
+最後に
+-----
 ここまで作成したファイル全体をあげておきます。
 
 ```
@@ -187,6 +183,7 @@ stack.addOutput(output);
 fs.writeFileSync(process.env["TargetDir"] + "cloudformation.json", stack.toString());
 ```
 
+プロジェクトもしくはソリューションのビルドを実行すると、今回記述を行ったtarget.tsが実行されます。
 記述した内容はTypeScriptからJavaScriptにコンパイルされ、コンパイルされた結果はNode.jsで実行されるようにプロジェクトが構成されています。
 stack.toStringメソッドによりスタック全体がJSONで出力されますが、JSONの内容自体はNode.jsによってファイルに出力されます。ファイルが出力される場所は、このソリューションの配下にある「bin」フォルダの中に「cloudformation.json」という名前で出力されるよう構成されています。
 
