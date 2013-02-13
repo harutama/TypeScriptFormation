@@ -1,6 +1,9 @@
+はじめてのTypeScriptFormation
+==========================
 
-
-[http://aws.amazon.com/jp/cloudformation/#details](http://aws.amazon.com/jp/cloudformation/#details)にあるサンプルと同じ物を作ってみます。
+TypeScriptFormationは、AWSの提供するサービスCloudFormationで、スタックと呼ばれる構成を記述するJSONファイルを、TypeScriptを用いて簡単に書けるようにしてみようという試みです。
+ここでは[http://aws.amazon.com/jp/cloudformation/#details](http://aws.amazon.com/jp/cloudformation/#details)にあるサンプルと同じ物を、TypeScriptFormationを使って作ってみます。
+最終的な目標となるJSONは、以下のものになります。
 
 ```
 {
@@ -30,6 +33,22 @@
 } 
 ```
 
+はじめに
+------
+TypeScriptFormationはVisual Studio 2012のソリューションとして提供されますので、Visual Studio 2012が事前にセットアップされている必要があります。
+(無償版を利用する場合はVisual Studio Express 2012 for Web)
+[http://www.microsoft.com/visualstudio/jpn/downloads#d-2012-express](http://www.microsoft.com/visualstudio/jpn/downloads#d-2012-express)
+
+TypeScriptのインテリセンスを利用するため、TypeScript for Visual Studio 2012が必要です。
+[http://go.microsoft.com/fwlink/?LinkID=266563](http://go.microsoft.com/fwlink/?LinkID=266563)
+
+TypeScriptをコンパイルして生成されたJavaScriptは、node.jsを用いて実行されます。
+このため、node.jsのインストールが必要です。
+http://nodejs.org/
+
+これからの内容を記述する対象となるファイルはCloudFormationプロジェクト内にあるtarget.tsファイルになります。
+提供されるソリューションは、ビルドを実行するたびにtarget.tsファイルのコンパイルと実行を行うように構成されています。完成したら（完成しなくても動かしたいときは）ビルドを行うことで自動的にtarget.tsが実行されます。
+
 スタックのDescription
 -----------------
 スタック自体の説明書きはAWS.Stackのコンストラクタで指定をします。
@@ -50,9 +69,9 @@ Parametersセクションには、スタックを作成する際にユーザー�
 var stack: AWS.Stack = new AWS.Stack("Create an EC2 instance running the Amazon Linux 32 bit AMI.");
 
 //stackにいろいろ追加してください。
-var param: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
+**var param: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
 param.setDescription("The EC2 Key Pair to allow SSH access to the instance");
-stack.addParameter(param);
+stack.addParameter(param);**
 ```
 
 Parameter自体はAWS.Parameterクラスに対応しています。このクラスのコンストラクタの引数は2つの値を要求します。
@@ -76,9 +95,9 @@ var param: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.Strin
 param.setDescription("The EC2 Key Pair to allow SSH access to the instance");
 stack.addParameter(param);
 
-var instance: AWS.EC2.Instance = new AWS.EC2.Instance("Ec2Instance");
+**var instance: AWS.EC2.Instance = new AWS.EC2.Instance("Ec2Instance");
 instance.setKeyName(param.createRef()).setImageId("ami-75g0061f");
-stack.addResource(instance);
+stack.addResource(instance);**
 ```
 
 各リソースに対応するクラスは「AWS.[サービス名]」で表現される各モジュール内に用意されています。今回はEC2インスタンスを作成したいのでAWS.EC2.Instanceクラスのオブジェクト作成しています。サンプルにある各リソースに対応するTypeは
@@ -106,9 +125,21 @@ Outputセクションには、スタックの構築が完了した際に、ユ�
 サンプルに対応するTypeScriptは以下のようになります。
 
 ```
-var output: AWS.Output = new AWS.Output("InstanceId", instance.createRef());
+//Stackを作成
+var stack: AWS.Stack = new AWS.Stack("Create an EC2 instance running the Amazon Linux 32 bit AMI.");
+
+//stackにいろいろ追加してください。
+var param: AWS.Parameter = new AWS.Parameter("KeyPair", AWS.ParameterTypes.String);
+param.setDescription("The EC2 Key Pair to allow SSH access to the instance");
+stack.addParameter(param);
+
+var instance: AWS.EC2.Instance = new AWS.EC2.Instance("Ec2Instance");
+instance.setKeyName(param.createRef()).setImageId("ami-75g0061f");
+stack.addResource(instance);
+
+**var output: AWS.Output = new AWS.Output("InstanceId", instance.createRef());
 output.setDescription("The InstanceId of the newly created EC2 instance");
-stack.addOutput(output);
+stack.addOutput(output);**
 ```
 
 アウトプットはAWS.Outputクラスで指定します。
@@ -152,3 +183,6 @@ fs.writeFileSync(process.env["TargetDir"] + "cloudformation.json", stack.toStrin
 
 記述した内容はTypeScriptからJavaScriptにコンパイルされ、コンパイルされた結果はNode.jsで実行されるようにプロジェクトが構成されています。
 stack.toStringメソッドによりスタック全体がJSONで出力されますが、JSONの内容自体はNode.jsによってファイルに出力されます。ファイルが出力される場所は、このソリューションの配下にある「bin」フォルダの中に「cloudformation.json」という名前で出力されるよう構成されています。
+
+標準ではファイルとして出力していますが、Node.jsによって実行されるため、Node.jsでできる事ならば途中で何でも
+できてしまいます。
