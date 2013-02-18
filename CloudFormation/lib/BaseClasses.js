@@ -76,6 +76,18 @@ var AWS;
         BaseElement.prototype.getName = function () {
             return this.Name;
         };
+        BaseElement.prototype.toJSON = function () {
+            var retval = {
+            };
+            for(var key in this) {
+                if(key === "Name") {
+                    retval[key] = undefined;
+                } else {
+                    retval[key] = this[key];
+                }
+            }
+            return retval;
+        };
         return BaseElement;
     })();
     AWS.BaseElement = BaseElement;    
