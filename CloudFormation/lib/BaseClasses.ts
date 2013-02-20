@@ -86,14 +86,13 @@
         }
 
         /**
-         * Validate this stack.
+         * Validate resources in this stack.
          * @return  Array of validation result.
          */
         validate(): ValidationResult[] {
             var retval: ValidationResult[] = new ValidationResult[]();
 
             for (var key in this.Resources) {
-                console.log(key);
                 var r: BaseResource = this.Resources[key];
                 r.validate(retval);
             }

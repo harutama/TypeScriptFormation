@@ -66,7 +66,6 @@ var AWS;
         Stack.prototype.validate = function () {
             var retval = new Array();
             for(var key in this.Resources) {
-                console.log(key);
                 var r = this.Resources[key];
                 r.validate(retval);
             }
