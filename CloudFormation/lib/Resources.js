@@ -27,13 +27,12 @@ var AWS;
                     "NetworkAclId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -104,13 +103,12 @@ var AWS;
                     "PolicyDocument"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -150,13 +148,12 @@ var AWS;
                     "DBSecurityGroupIngress"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -221,13 +218,12 @@ var AWS;
                     "FromPort"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -301,13 +297,12 @@ var AWS;
                     "ApplicationVersions"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -342,13 +337,12 @@ var AWS;
                     "Roles"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -389,13 +383,12 @@ var AWS;
                     "Type"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -462,13 +455,12 @@ var AWS;
                     "PolicyDocument"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -542,13 +534,12 @@ var AWS;
                     "AvailabilityZone"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -596,13 +587,12 @@ var AWS;
                     "DestinationCidrBlock"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -657,13 +647,12 @@ var AWS;
                     "DomainNameServers"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -713,13 +702,12 @@ var AWS;
                     "Description"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -764,13 +752,12 @@ var AWS;
                     "AdjustmentType"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -806,13 +793,12 @@ var AWS;
                     "GroupName"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -906,13 +892,12 @@ var AWS;
                     "VpcId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -947,13 +932,12 @@ var AWS;
                     "Type"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1025,13 +1009,12 @@ var AWS;
                     "InstanceType"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1082,13 +1065,12 @@ var AWS;
                     "SubnetId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1123,13 +1105,12 @@ var AWS;
                     "VpcId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1168,13 +1149,12 @@ var AWS;
                     "TemplateURL"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1210,13 +1190,12 @@ var AWS;
                     "RouteTableId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1252,13 +1231,12 @@ var AWS;
                     "SubnetIds"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1328,13 +1306,12 @@ var AWS;
                     "RecordSets"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1401,13 +1378,12 @@ var AWS;
                     "Listeners"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1446,13 +1422,12 @@ var AWS;
                     "AssumeRolePolicyDocument"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1493,13 +1468,12 @@ var AWS;
                     "VpcId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1540,13 +1514,12 @@ var AWS;
                     "IpAddress"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1600,13 +1573,12 @@ var AWS;
                     "GroupId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1679,13 +1651,12 @@ var AWS;
                     "Engine"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1726,13 +1697,12 @@ var AWS;
                     "Count"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1821,13 +1791,12 @@ var AWS;
                     "ComparisonOperator"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1863,13 +1832,12 @@ var AWS;
                     "VpcId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1910,13 +1878,12 @@ var AWS;
                     "InstanceId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1952,13 +1919,12 @@ var AWS;
                     "KeySchema"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -1998,13 +1964,12 @@ var AWS;
                     "CacheParameterGroupFamily"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2044,13 +2009,12 @@ var AWS;
                     "UserName"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2164,13 +2128,12 @@ var AWS;
                     "BreachDuration"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2211,13 +2174,12 @@ var AWS;
                     "Family"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2258,13 +2220,12 @@ var AWS;
                     "EC2SecurityGroupOwnerId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2323,13 +2284,12 @@ var AWS;
                     "ApplicationName"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2365,13 +2325,12 @@ var AWS;
                     "PolicyDocument"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2479,13 +2438,12 @@ var AWS;
                     "InstanceType"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2559,13 +2517,12 @@ var AWS;
                     "CidrBlock"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2600,13 +2557,12 @@ var AWS;
                     "VpcId"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2642,13 +2598,12 @@ var AWS;
                     "PolicyDocument"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2683,13 +2638,12 @@ var AWS;
                     "Subscription"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2766,13 +2720,12 @@ var AWS;
                     "MinSize"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2830,13 +2783,12 @@ var AWS;
                     "DistributionConfig"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -2908,13 +2860,12 @@ var AWS;
                     "Type"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -3021,13 +2972,12 @@ var AWS;
                     "MasterUsername"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }
@@ -3091,13 +3041,12 @@ var AWS;
                     "RuleNumber"
                 ];
                 for(var i = 0; i < requires.length; i++) {
-                    if(this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                        var err = {
-                            "Name": this.getName(),
-                            "Type": this.getType(),
-                            "Property": requires[i],
-                            "Description": "value is null or undefined."
-                        };
+                    if(this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                        var err = new AWS.ValidationResult();
+                        err.setName(this.getName());
+                        err.setType(this.getType());
+                        err.setProperty(requires[i]);
+                        err.setDescription("value is null or undefined.");
                         errors.push(err);
                     }
                 }

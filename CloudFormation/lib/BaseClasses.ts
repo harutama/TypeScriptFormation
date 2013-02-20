@@ -86,6 +86,21 @@
         }
 
         /**
+         * Validate this stack.
+         * @return  Array of validation result.
+         */
+        validate(): ValidationResult[] {
+            var retval: ValidationResult[] = new ValidationResult[]();
+
+            for (var key in this.Resources) {
+                console.log(key);
+                var r: BaseResource = this.Resources[key];
+                r.validate(retval);
+            }
+            return retval;
+        }
+
+        /**
          * This object contents is output to JSON as CloudFormation stack.
          * @return JSON stirng.
          */
@@ -426,6 +441,15 @@
             return JSON.stringify(this);
         }
 
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
+            return errors;
+        }
+
     }
 
     //------------------------------------------------------------
@@ -456,6 +480,73 @@
          */
         setDescription(description: string): void {
             this.Description = description;
+        }
+
+    }
+
+    //------------------------------------------------------------
+
+    /**
+     * Retain calidation result class.
+     */
+    export class ValidationResult {
+
+        private Name: string = "";
+        private Type: string = "";
+        private Property: string = "";
+        private Description: string = "";
+
+        constructor() {
+
+        }
+
+        /**
+         * Name of error object.
+         * @param name Object name.
+         * @return This object.
+         */
+        setName(name: string): ValidationResult {
+            this.Name = name;
+            return this;
+        }
+
+        /**
+         * Type that has error.
+         * @param type Type name of error.
+         * @return This object.
+         */
+        setType(type: string): ValidationResult {
+            this.Type = type;
+            return this;
+        }
+
+        /**
+         * Property name that has error.
+         * @param property Property name.
+         * @return This object.
+         */
+        setProperty(property: string): ValidationResult {
+            this.Property = property;
+            return this;
+        }
+
+        /**
+         * Description
+         * @param description Description of error.
+         * @return This object.
+         */
+        setDescription(description: string): ValidationResult {
+            this.Description = description;
+            return this;
+        }
+
+        toString(): string {
+            var retval: string = "";
+            retval += "Name:" + this.Name;
+            retval += " Type:" + this.Type;
+            retval += " Property:" + this.Property;
+            retval += " Description:" + this.Description;
+            return retval;
         }
 
     }

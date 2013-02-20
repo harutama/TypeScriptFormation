@@ -43,12 +43,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["SubnetId", "NetworkAclId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -127,7 +136,12 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -175,12 +189,21 @@ module AWS.SQS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Queues", "PolicyDocument"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -245,12 +268,21 @@ module AWS.RDS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["GroupDescription", "DBSecurityGroupIngress"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -390,12 +422,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["IpProtocol", "ToPort", "FromPort"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -468,7 +509,12 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -529,12 +575,21 @@ module AWS.ElasticBeanstalk {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["ApplicationVersions"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -590,12 +645,21 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Roles"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -660,12 +724,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CustomerGatewayId", "VpnGatewayId", "Type"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -694,7 +767,12 @@ module AWS.SDB {
         }
 
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -775,12 +853,21 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["PolicyName", "PolicyDocument"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -829,7 +916,12 @@ module AWS.SQS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -935,12 +1027,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["AvailabilityZone"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1035,12 +1136,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["RouteTableId", "DestinationCidrBlock"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1143,12 +1253,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["NetbiosNodeType", "NtpServers", "NetbiosNameServers", "DomainName", "DomainNameServers"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1177,7 +1296,12 @@ module AWS.CloudFormation {
         }
 
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -1214,12 +1338,21 @@ module AWS.ElastiCache {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Description"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1295,12 +1428,21 @@ module AWS.AutoScaling {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["AutoScalingGroupName", "ScalingAdjustment", "AdjustmentType"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1351,12 +1493,21 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Users", "GroupName"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1412,7 +1563,12 @@ module AWS.S3 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -1450,7 +1606,12 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -1525,12 +1686,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CidrBlock", "VpcId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1583,12 +1753,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Type"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1748,12 +1927,21 @@ module AWS.AutoScaling {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["ImageId", "InstanceType"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1849,12 +2037,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["SubnetId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1905,12 +2102,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["VpcId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -1976,12 +2182,21 @@ module AWS.CloudFormation {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["TemplateURL"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2035,12 +2250,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["SubnetId", "RouteTableId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2092,12 +2316,21 @@ module AWS.RDS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["DBSubnetGroupDescription", "SubnetIds"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2153,7 +2386,12 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -2226,12 +2464,21 @@ module AWS.Route53 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["RecordSets"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2383,12 +2630,21 @@ module AWS.ElasticLoadBalancing {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Listeners"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2456,12 +2712,21 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["AssumeRolePolicyDocument"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2527,12 +2792,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["InternetGatewayId", "VpnGatewayId", "VpcId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2596,12 +2870,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["BgpAsn", "Type", "IpAddress"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2702,12 +2985,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["IpProtocol", "ToPort", "FromPort", "GroupId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2858,12 +3150,21 @@ module AWS.ElastiCache {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CacheSecurityGroupNames", "CacheNodeType", "Engine"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -2928,12 +3229,21 @@ module AWS.CloudFormation {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Handle", "Timeout", "Count"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3124,12 +3434,21 @@ module AWS.CloudWatch {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Period", "Statistic", "MetricName", "Threshold", "EvaluationPeriods", "Namespace", "ComparisonOperator"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3180,12 +3499,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["DhcpOptionsId", "VpcId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3250,12 +3578,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Device", "VolumeId", "InstanceId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3306,12 +3643,21 @@ module AWS.DynamoDB {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["ProvisionedThroughput", "KeySchema"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3374,12 +3720,21 @@ module AWS.ElastiCache {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Description", "CacheParameterGroupFamily"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3447,12 +3802,21 @@ module AWS.IAM {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Status", "UserName"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3527,7 +3891,12 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -3689,12 +4058,21 @@ module AWS.AutoScaling {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["AutoScalingGroupName", "MetricName", "LowerThreshold", "Dimensions", "BreachDuration"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3758,12 +4136,21 @@ module AWS.RDS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Parameters", "Description", "Family"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3826,12 +4213,21 @@ module AWS.ElastiCache {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CacheSecurityGroupName", "EC2SecurityGroupName", "EC2SecurityGroupOwnerId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -3951,12 +4347,21 @@ module AWS.ElasticBeanstalk {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["ApplicationName"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4007,12 +4412,21 @@ module AWS.S3 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Bucket", "PolicyDocument"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4284,12 +4698,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["ImageId", "InstanceType"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4363,7 +4786,12 @@ module AWS.RDS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -4424,12 +4852,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CidrBlock"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4481,12 +4918,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["VpcId"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4537,12 +4983,21 @@ module AWS.SNS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Topics", "PolicyDocument"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4593,12 +5048,21 @@ module AWS.SNS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Subscription"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4760,12 +5224,21 @@ module AWS.AutoScaling {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["AvailabilityZones", "MaxSize", "MinSize"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -4822,7 +5295,12 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             return errors;
         }
 
@@ -4863,12 +5341,21 @@ module AWS.CloudFront {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["DistributionConfig"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -5035,12 +5522,21 @@ module AWS.Route53 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["Name", "Type"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -5291,12 +5787,21 @@ module AWS.RDS {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["DBInstanceClass", "AllocatedStorage", "MasterUserPassword", "Engine", "MasterUsername"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }
@@ -5419,12 +5924,21 @@ module AWS.EC2 {
             return this;
         }
 
-        validate(errors: Object[]): Object[] {
+        /**
+         * Validate this object.
+         * @param errors Result store of validation.
+         * @return The array that assigned argument.
+         */
+        validate(errors: ValidationResult[]): ValidationResult[] {
             var requires: string[] = ["CidrBlock", "RuleAction", "Egress", "NetworkAclId", "Protocol", "RuleNumber"];
 
             for (var i: number = 0; i < requires.length; i++) {
-                if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {
-                    var err: Object = { "Name": this.getName(), "Type": this.getType(), "Property": requires[i], "Description": "value is null or undefined." };
+                if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {
+                    var err: ValidationResult = new ValidationResult();
+                    err.setName(this.getName());
+                    err.setType(this.getType());
+                    err.setProperty(requires[i]);
+                    err.setDescription("value is null or undefined.");
                     errors.push(err);
                 }
             }

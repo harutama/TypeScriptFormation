@@ -63,6 +63,15 @@ var AWS;
                 this.Outputs[output[i].getName()] = output[i];
             }
         };
+        Stack.prototype.validate = function () {
+            var retval = new Array();
+            for(var key in this.Resources) {
+                console.log(key);
+                var r = this.Resources[key];
+                r.validate(retval);
+            }
+            return retval;
+        };
         Stack.prototype.toString = function () {
             return JSON.stringify(this, undefined, "    ");
         };
@@ -228,6 +237,9 @@ var AWS;
         BaseResource.prototype.toString = function () {
             return JSON.stringify(this);
         };
+        BaseResource.prototype.validate = function (errors) {
+            return errors;
+        };
         return BaseResource;
     })(BaseElement);
     AWS.BaseResource = BaseResource;    
@@ -243,6 +255,40 @@ var AWS;
         return Output;
     })(BaseElement);
     AWS.Output = Output;    
+    var ValidationResult = (function () {
+        function ValidationResult() {
+            this.Name = "";
+            this.Type = "";
+            this.Property = "";
+            this.Description = "";
+        }
+        ValidationResult.prototype.setName = function (name) {
+            this.Name = name;
+            return this;
+        };
+        ValidationResult.prototype.setType = function (type) {
+            this.Type = type;
+            return this;
+        };
+        ValidationResult.prototype.setProperty = function (property) {
+            this.Property = property;
+            return this;
+        };
+        ValidationResult.prototype.setDescription = function (description) {
+            this.Description = description;
+            return this;
+        };
+        ValidationResult.prototype.toString = function () {
+            var retval = "";
+            retval += "Name:" + this.Name;
+            retval += " Type:" + this.Type;
+            retval += " Property:" + this.Property;
+            retval += " Description:" + this.Description;
+            return retval;
+        };
+        return ValidationResult;
+    })();
+    AWS.ValidationResult = ValidationResult;    
 })(AWS || (AWS = {}));
 var AWS;
 (function (AWS) {
