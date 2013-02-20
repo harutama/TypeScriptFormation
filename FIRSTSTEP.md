@@ -187,5 +187,27 @@ fs.writeFileSync(process.env["TargetDir"] + "cloudformation.json", stack.toStrin
 記述した内容はTypeScriptからJavaScriptにコンパイルされ、コンパイルされた結果はNode.jsで実行されるようにプロジェクトが構成されています。
 stack.toStringメソッドによりスタック全体がJSONで出力されますが、JSONの内容自体はNode.jsによってファイルに出力されます。ファイルが出力される場所は、このソリューションの配下にある「bin」フォルダの中に「cloudformation.json」という名前で出力されるよう構成されています。
 
-標準ではファイルとして出力していますが、Node.jsによって実行されるため、Node.jsでできる事ならば途中で何でも
-できてしまいます。
+標準ではファイルとして出力していますが、Node.jsによって実行されるため、Node.jsでできる事ならば途中で何でもできてしまいます。
+
+ところで…
+----------
+ここで作成したスタックは正しいのでしょうか？
+Stackにはバリデーションを行うメソッドが用意されています。
+以下のようにしてバリデーションを実行することができます。
+
+```
+//バリデーションした結果を表示
+var results: AWS.ValidationResult[] = stack.validate();
+console.log(results);
+```
+
+これを実行するとコンソール（Visual Studioでは「出力」のところ）に以下のような出力がされます。
+
+```
+1>  [ { Name: 'Ec2Instance',
+1>      Type: 'AWS::EC2::Instance',
+1>      Property: 'InstanceType',
+1>      Description: 'value is null or undefined.' } ]
+```
+
+バリデーションの結果、InstanceType（"t1.micro"のようなインスタンスのサイズ指定）に設定がされていないという部分が引っかかっています。現状のバリデーションでは設定が必須なものに関してしかチェックできていませんが、まあ、そのうち、がんばります…
