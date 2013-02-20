@@ -109,13 +109,22 @@ function procProperties(modulename: string, classname: string, resource: Object)
         retval += "\r\n";
     }
 
-    retval += "validate(errors:Object[]): Object[]{\r\n";
+    retval += "/**\r\n";
+    retval += " * Validate this object.\r\n";
+    retval += " * @param errors Result store of validation.\r\n";
+    retval += " * @return The array that assigned argument.\r\n";
+    retval += " */\r\n";
+    retval += "validate(errors:ValidationResult[]): ValidationResult[]{\r\n";
     if (requires.length != 0) {
         retval += "var requires: string[] = " + JSON.stringify(requires) + ";\r\n";
         retval += "\r\n";
         retval += "for (var i: number = 0; i < requires.length; i++) {\r\n";
-        retval += "if (this.Properties[requires[i]] == undefined || this.Properties[requires[i]] == null) {\r\n";
-        retval += "var err: Object = { \"Name\": this.getName(), \"Type\": this.getType(), \"Property\": requires[i], \"Description\": \"value is null or undefined.\" };\r\n";
+        retval += "if (this.Properties[requires[i]] === undefined || this.Properties[requires[i]] === null) {\r\n";
+        retval += "var err: ValidationResult = new ValidationResult();\r\n";
+        retval += "err.setName(this.getName());\r\n";
+        retval += "err.setType(this.getType());\r\n";
+        retval += "err.setProperty(requires[i]);\r\n";
+        retval += "err.setDescription(\"value is null or undefined.\");\r\n";
         retval += "errors.push(err);\r\n";
         retval += "}\r\n";
         retval += "}\r\n";
